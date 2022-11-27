@@ -1,12 +1,19 @@
 chrome.contextMenus.create({
   id: "ternaus",
   title: "Search on Ternaus",
-  contexts: ["selection"]
+  contexts: ["selection", "image"]
 });
 
 chrome.contextMenus.onClicked.addListener( (clickData) => {
-  chrome.tabs.create({
-    url: `https://ternaus.com/search/?search=${clickData.selectionText}`,
-    active: true
-  });
+  if (clickData.selectionText) {
+    chrome.tabs.create({
+      url: `https://ternaus.com/search/?text=${clickData.selectionText}`,
+      active: true
+    });
+  } else if (clickData.srcUrl) {
+    chrome.tabs.create({
+      url: `https://ternaus.com/search/?url=${clickData.srcUrl}`,
+      active: true
+    });
+  }
 });
