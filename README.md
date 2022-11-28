@@ -4,7 +4,7 @@
 
 After installing the extension, you can right-click on any image or selected text on the web and select "Search on Ternaus".
 
-![]((https://i.postimg.cc/436w1v8p/to.webp)
+![](https://i.postimg.cc/436w1v8p/to.webp)
 
 A new tab will be created with the result of the search.
 
